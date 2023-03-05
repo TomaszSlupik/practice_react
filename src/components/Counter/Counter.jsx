@@ -1,16 +1,19 @@
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
+import { useEffect } from 'react'
 import Card from '@mui/material/Card';
 import './Counter.css'
 
-export default function Counter() {
+export default function Counter(props) {
 
     const [count, setCount] = useState(0)
     const [newCount, setNewCount] = useState()
  
 
     const countUp  = () => {
-        setCount(count + 1)
+        const newValue = count + 1
+        setCount(newValue)
+        props.onCountChange(newValue)
     }
 
     const resetCount = () => {
@@ -18,10 +21,18 @@ export default function Counter() {
         setNewCount(0)
     }
 
+    useEffect(() => {
+        console.log('mount')
+    }, [])
+
+ 
+
    
   return (
     <div>
         <div className="counter">
+            <div>{props.name}</div>
+            <div>{props.el}</div>
             <Card style={{position: 'relative', width: '100%', height: '100%'}}>
                 <div style={{position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
                     <div style={{fontWeight: 'bold'}}>Counter</div>
