@@ -1,0 +1,16 @@
+.box {
+    width: 200px;
+    height: 200px;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.boxWide {
+    width: 400px;
+}

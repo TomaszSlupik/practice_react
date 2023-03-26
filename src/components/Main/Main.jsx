@@ -1,8 +1,15 @@
 import { Button } from '@mui/material'
 import React, { useState, useEffect } from 'react'
+import BoxesContainer from '../BoxesContainer/BoxesContainer'
 import CarContainer from '../CarContainer/CarContainer'
+import CarTestClass from '../CarTestClass/CarTestClass'
+import ColorPicker from '../ColorPicker/ColorPicker'
 import Counter from '../Counter/Counter'
 import Inputuser from '../Inputuser/Inputuser'
+import MouseMove from '../MouseMove/MouseMove'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+import Playground from '../Playground/Playground'
 
 export default function Main() {
 
@@ -42,7 +49,38 @@ useEffect(() => {
         {
             isCounterVisible ? <Counter name="Zdzisław"/> : null
         }
-        <Counter onCountChange={onCountChange}/>
+        <Router>
+        <nav style={{textAlign: 'center'}}>
+            <ul style={{listStyleType: 'none'}}>
+                <li>
+                    <Link to="/counter">Counter</Link>
+                </li>
+                <li>
+                    <Link to="/input">Input</Link>
+                </li>
+                <li>
+                    <Link to="/mousemove">Mouse Move</Link>
+                </li>
+                <li>
+                    <Link to="/carcontainer">Car container</Link>
+                </li>
+                <li>
+                    <Link to="/cartestclass">Car Test Class</Link>
+                </li>
+                <li>
+                    <Link to="/colorpicker">Color Picker</Link>
+                </li>
+                <li>
+                    <Link to="/boxescontainer">Boxes Container</Link>
+                </li>
+                <li>
+                    <Link to="/playground">Playground</Link>
+                </li>
+                
+            </ul>
+        </nav>
+        
+        {/* <Counter onCountChange={onCountChange}/>
         <br />
         {
             ITEMS.map((el, index) => {
@@ -53,10 +91,21 @@ useEffect(() => {
                     el={el} name='Leszek'/>
                 )
             })
-        }
+        } */}
         <br />
-        <Inputuser />
-        <CarContainer />
+        <br />
+        <br />
+            <Routes>
+                <Route exact path='/counter' element={<Counter onCountChange={onCountChange}/>} />
+                <Route exact path='/input' element={<Inputuser />} />
+                <Route exact path='/mousemove' element={<MouseMove />} />
+                <Route exact path='/carcontainer' element={<CarContainer />} />
+                <Route exact path='/cartestclass' element={<CarTestClass />} />
+                <Route exact path='/colorpicker' element={<ColorPicker />} />
+                <Route exact path='/boxescontainer' element={<BoxesContainer />} />
+                <Route exact path='/playground' element={<Playground />} />
+            </Routes>
+        </Router>
     </div>
   )
 }
