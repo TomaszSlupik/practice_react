@@ -10,6 +10,7 @@ import MouseMove from '../MouseMove/MouseMove'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Playground from '../Playground/Playground'
+import Dogs from '../Dogs/Dogs'
 
 export default function Main() {
 
@@ -76,6 +77,9 @@ useEffect(() => {
                 <li>
                     <Link to="/playground">Playground</Link>
                 </li>
+                <li>
+                    <Link to="/dogs">Pobieranie danych z API</Link>
+                </li>
                 
             </ul>
         </nav>
@@ -104,6 +108,7 @@ useEffect(() => {
                 <Route exact path='/colorpicker' element={<ColorPicker />} />
                 <Route exact path='/boxescontainer' element={<BoxesContainer />} />
                 <Route exact path='/playground' element={<Playground />} />
+                <Route exact path='/dogs' element={<Dogs />} />
             </Routes>
         </Router>
     </div>
