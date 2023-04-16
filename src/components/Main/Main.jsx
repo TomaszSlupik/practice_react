@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 import Playground from '../Playground/Playground'
 import Dogs from '../Dogs/Dogs'
+import Weather from '../Weather/Weather'
+import {PizzaRaw} from '../../pizza_raw'
 
 export default function Main() {
 
@@ -80,6 +82,12 @@ useEffect(() => {
                 <li>
                     <Link to="/dogs">Pobieranie danych z API</Link>
                 </li>
+                <li>
+                    <Link to="/weather">Pogoda</Link>
+                </li>
+                <li>
+                    <Link to="/pizza-raw">Pizza</Link>
+                </li>
                 
             </ul>
         </nav>
@@ -109,6 +117,8 @@ useEffect(() => {
                 <Route exact path='/boxescontainer' element={<BoxesContainer />} />
                 <Route exact path='/playground' element={<Playground />} />
                 <Route exact path='/dogs' element={<Dogs />} />
+                <Route exact path='/weather' element={<Weather />} />
+                <Route exact path='/pizza-raw' element={<PizzaRaw />} />
             </Routes>
         </Router>
     </div>

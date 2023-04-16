@@ -1,0 +1,4 @@
+export const SET_USERNAME = 'SET_USERNAME';
+export const SET_NUMBER_OF_PEOPLE  = 'SET_NUMBER_OF_PEOPLE';
+export const RESET_FORM = 'RESET_FORM';
+
