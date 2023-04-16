@@ -1,7 +1,7 @@
 import { Button } from '@mui/material'
 import React, { useState } from 'react'
 import axios from 'axios'
-import {API_KEY} from '../../key'
+
 
 export default function Weather() {
 
@@ -11,7 +11,9 @@ const [errorMsg, setErrorMsg] = useState()
 const [loading, setLoading] = useState(false)
 
 
-const BASE_API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
+const REACT_APP_API_KEY = process.env.REACT_APP_API_KEY;
+
+const BASE_API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${REACT_APP_API_KEY}&units=metric`;
 
 const getCity = (e) => {
     setCity(e.target.value)
