@@ -11,7 +11,7 @@ export const PizzaRaw = () => {
     const dispatch = useDispatch()
     
     const clearData = () => {
-        
+        dispatch(setUserName(""))
     }
 
         return <div>
